@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context=".MainActivity"
+              android:orientation="vertical"
+              android:background="#a8f6f8">
+
+    <android.support.constraint.ConstraintLayout
+            android:id="@+id/spinner_harf_yeni1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#d7fffe">
+
+
+        <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="233dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:hint="Ders Adı:"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+                android:id="@+id/btn_ekle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/ekle"
+                app:layout_constraintBottom_toBottomOf="@+id/autoCompleteTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/autoCompleteTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        <Spinner
+                android:id="@+id/spinner_kredi"
+                android:layout_width="172dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@android:color/transparent"
+                android:entries="@array/krediler"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_harf"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView"
+                app:layout_constraintVertical_bias="0.0" />
+
+        <Spinner
+                android:id="@+id/spinner_harf"
+                android:layout_width="154dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@android:color/transparent"
+                android:entries="@array/harfler"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/spinner_kredi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView"
+                app:layout_constraintVertical_bias="0.0"
+
+
+        />
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="340dp">
+
+        <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/rootLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#d7fffe"
+                android:orientation="vertical">
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+    <Button
+            android:id="@+id/btn_hesapla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:onClick="OrtalamaHesapla"
+            android:text="Hesapla"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Hesapla" />
+
+
+</LinearLayout>
